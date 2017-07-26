@@ -1,6 +1,6 @@
 <div align="center">
-  <h1 align="center">Fantasy Skeleton React</h1>
-  <p align="center">网站开发骨架，集成Webpack、Bootstrap、React、Sass</p>
+  <h1 align="center">Fantasy Skeleton Leaflet</h1>
+  <p align="center">网站开发骨架，集成Leaflet、Webpack、Bootstrap、React、Sass</p>
   <p align="center">Auth by Liuyl from GisUni</p>
 </div>
 
@@ -26,7 +26,7 @@ npm install
 output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/fantasy-skeleton-react/'
+    publicPath: '/fantasy-skeleton-leaflet/'
 },
 ```
 
@@ -43,14 +43,14 @@ npm run build
 以nginx为例:
 
 ```bash
-location ^~/fantasy-skeleton-react/{
-	try_files $uri $uri/ /fantasy-skeleton-react/index.html;
+location ^~/fantasy-skeleton-leaflet/{
+	try_files $uri $uri/ /fantasy-skeleton-leaflet/index.html;
 }
 ```
 
 通过如下url对页面进行访问：
 
-http://yourHostname/fantasy-skeleton-react/
+http://yourHostname/fantasy-skeleton-leaflet/
 
 ### 不使用webpack-dev-server进行开发
 ```js
@@ -58,7 +58,7 @@ http://yourHostname/fantasy-skeleton-react/
 output: {
     filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '/fantasy-skeleton-react/'
+    publicPath: '/fantasy-skeleton-leaflet/'
 },
 ```
 
@@ -75,15 +75,15 @@ npm run build-dev
 以nginx为例:
 
 ```bash
-location ^~/fantasy-skeleton-react/{
-	alias yourPhysicalPath\\fantasy-skeleton-react\\dist\\;
-	try_files $uri $uri/ /fantasy-skeleton-react/index.html;
+location ^~/fantasy-skeleton-leaflet/{
+	alias yourPhysicalPath\\fantasy-skeleton-leaflet\\dist\\;
+	try_files $uri $uri/ /fantasy-skeleton-leaflet/index.html;
 }
 ```
 
 通过如下url对页面进行访问：
 
-http://yourHostname/fantasy-skeleton-react/
+http://yourHostname/fantasy-skeleton-leaflet/
 
 src目录中代码文件改动时将自动重新编译，刷新页面即可生效
 
@@ -96,7 +96,7 @@ src目录中代码文件改动时将自动重新编译，刷新页面即可生�
 npm run webpack-dev-server
 ```
 
-访问 http://localhost:8070/fantasy-skeleton-react/ 查看页面
+访问 http://localhost:8070/fantasy-skeleton-leaflet/ 查看页面
 
 src目录中代码文件改动时将自动重新编译，页面更改将自动刷新生效
 
@@ -110,6 +110,7 @@ src目录中代码文件改动时将自动重新编译，页面更改将自动�
 
 |特性|描述|
 |:--------|:---------|
+|Leaflet | 集成了Leaflet 1.1.0 |
 |HTML5 Boilerplate | 页面基于HTML5 Boilerplate v5.3.0构建，集成其中全部特性 |
 |Webpack | 使用Webpack进行部署管理和开发支持，支持Hot Reload开发|
 | Gulp | 使用Gulp进行构建任务管理 |

@@ -1,7 +1,7 @@
 {
-  "name": "fantasy-skeleton-react",
+  "name": "fantasy-skeleton-leaflet",
   "version": "0.0.1",
-  "description": "fantasy-skeleton-react Project from GisUni",
+  "description": "fantasy-skeleton-leaflet Project from GisUni",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {
@@ -21,6 +21,7 @@
     "gulp": "^3.9.1",
     "gulp-util": "^3.0.8",
     "html-webpack-plugin": "^2.29.0",
+    "leaflet": "^1.1.0",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.3",
     "node-static": "^0.7.9",
@@ -40,14 +41,14 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp build:fantasy-skeleton-react",
-    "build-dev": "gulp build-dev:fantasy-skeleton-react",
-    "webpack-dev-server": "gulp webpack-dev-server:fantasy-skeleton-react",
+    "build": "gulp build:fantasy-skeleton-leaflet",
+    "build-dev": "gulp build-dev:fantasy-skeleton-leaflet",
+    "webpack-dev-server": "gulp webpack-dev-server:fantasy-skeleton-leaflet",
     "clean": "gulp clean:dist"
   },
   "repository": {
     "type": "git",
-    "url": "https:///github.com/Liuyl89/fantasy-skeleton-react.git"
+    "url": "https:///github.com/Liuyl89/fantasy-skeleton-leaflet.git"
   },
   "keywords": [
     "webgis",
@@ -58,7 +59,7 @@
   "author": "Liuyl",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Liuyl89/fantasy-skeleton-react/issues"
+    "url": "https://github.com/Liuyl89/fantasy-skeleton-leaflet/issues"
   },
-  "homepage": "https://github.com/Liuyl89/fantasy-skeleton-react#readme"
+  "homepage": "https://github.com/Liuyl89/fantasy-skeleton-leaflet#readme"
 }

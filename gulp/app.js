@@ -7,7 +7,7 @@ const path = require('path'),
     WebpackDevServer = require('webpack-dev-server'),
     staticServer = require('node-static'),
     http = require('http'),
-    name = ':fantasy-skeleton-react'
+    name = ':fantasy-skeleton-leaflet'
 
 gulp.task('clean' + name, function (cb) {
     del.sync('./dist/**/*', {force: true})

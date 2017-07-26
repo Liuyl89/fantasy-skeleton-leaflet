@@ -57,7 +57,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "/fantasy-skeleton-react/";
+/******/ 	__webpack_require__.p = "/fantasy-skeleton-leaflet/";
 /******/
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(__webpack_require__.s = 4);
@@ -98,7 +98,7 @@ var _app = __webpack_require__(8);
 
 var _app2 = _interopRequireDefault(_app);
 
-__webpack_require__(10);
+__webpack_require__(11);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -140,6 +140,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(9);
 
+var _leaflet = __webpack_require__(10);
+
+var _leaflet2 = _interopRequireDefault(_leaflet);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -147,6 +151,47 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var MapComponent = function (_React$Component) {
+    _inherits(MapComponent, _React$Component);
+
+    function MapComponent() {
+        _classCallCheck(this, MapComponent);
+
+        return _possibleConstructorReturn(this, (MapComponent.__proto__ || Object.getPrototypeOf(MapComponent)).apply(this, arguments));
+    }
+
+    _createClass(MapComponent, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            this.map = _leaflet2.default.map(this.dom).setView([51.505, -0.09], 13);
+
+            _leaflet2.default.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(this.map);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return _react2.default.createElement(
+                'div',
+                { className: 'jumbotron' },
+                _react2.default.createElement(
+                    'p',
+                    null,
+                    '\u8FD9\u662F\u4E00\u4E2A\u5730\u56FE\u793A\u4F8B'
+                ),
+                _react2.default.createElement('div', { style: { width: '100%', height: '400px' }, ref: function ref(dom) {
+                        _this2.dom = dom;
+                    } })
+            );
+        }
+    }]);
+
+    return MapComponent;
+}(_react2.default.Component);
 
 var Home = function Home() {
     return _react2.default.createElement(
@@ -160,7 +205,7 @@ var Home = function Home() {
         _react2.default.createElement(
             'p',
             null,
-            'fantasy-skeleton-react \u662F\u4E00\u4E2A\u5F00\u53D1\u9AA8\u67B6\uFF0C\u96C6\u6210\u4E86webpack\u3001bootstrap\u548CReact\uFF0C\u795D\u4F60\u597D\u8FD0~'
+            'fantasy-skeleton-leaflet \u662F\u4E00\u4E2A\u5F00\u53D1\u9AA8\u67B6\uFF0C\u96C6\u6210\u4E86Leaflet\u3001webpack\u3001bootstrap\u548CReact\uFF0C\u795D\u4F60\u597D\u8FD0~'
         ),
         _react2.default.createElement(
             'p',
@@ -168,33 +213,7 @@ var Home = function Home() {
             _react2.default.createElement(
                 'a',
                 { className: 'btn btn-primary btn-lg', target: '_blank',
-                    href: 'https://github.com/Liuyl89/fantasy-skeleton-react', role: 'button' },
-                '\u524D\u5F80Github'
-            )
-        )
-    );
-};
-var Sub = function Sub() {
-    return _react2.default.createElement(
-        'div',
-        { className: 'jumbotron' },
-        _react2.default.createElement(
-            'h1',
-            null,
-            '\u9AA8\u67B6\u96C6\u6210\u4E86React Router'
-        ),
-        _react2.default.createElement(
-            'p',
-            null,
-            '\u8FD9\u662FRouter\u7684\u4E00\u4E2A\u7B80\u5355\u7684\u793A\u4F8B\uFF0C\u4F7F\u7528\u7684\u662Freact-router 4.1.2\u7248\u672C\uFF0C\u67E5\u770B\u6587\u6863\u53CA\u6559\u7A0B\u65F6\u8BF7\u6CE8\u610F\u5176\u7248\u672C\u95F4\u7684\u5DE8\u5927\u5DEE\u5F02~'
-        ),
-        _react2.default.createElement(
-            'p',
-            null,
-            _react2.default.createElement(
-                'a',
-                { className: 'btn btn-primary btn-lg', target: '_blank',
-                    href: 'https://github.com/Liuyl89/fantasy-skeleton-react', role: 'button' },
+                    href: 'https://github.com/Liuyl89/fantasy-skeleton-leaflet', role: 'button' },
                 '\u524D\u5F80Github'
             )
         )
@@ -205,7 +224,7 @@ var ListItemLink = function ListItemLink(_ref) {
     var label = _ref.label,
         to = _ref.to,
         activeOnlyWhenExact = _ref.activeOnlyWhenExact;
-    return _react2.default.createElement(_reactRouterDom.Route, { path: to, exact: activeOnlyWhenExact, children: function children(_ref2) {
+    return _react2.default.createElement(_reactRouterDom.Route, { path: to, exact: activeOnlyWhenExact == 'true', children: function children(_ref2) {
             var match = _ref2.match;
             return _react2.default.createElement(
                 'li',
@@ -219,8 +238,8 @@ var ListItemLink = function ListItemLink(_ref) {
         } });
 };
 
-var App = function (_React$Component) {
-    _inherits(App, _React$Component);
+var App = function (_React$Component2) {
+    _inherits(App, _React$Component2);
 
     function App() {
         _classCallCheck(this, App);
@@ -233,7 +252,7 @@ var App = function (_React$Component) {
         value: function render() {
             return _react2.default.createElement(
                 _reactRouterDom.BrowserRouter,
-                { basename: '/fantasy-skeleton-react' },
+                { basename: '/fantasy-skeleton-leaflet' },
                 _react2.default.createElement(
                     'div',
                     null,
@@ -241,10 +260,10 @@ var App = function (_React$Component) {
                         'ul',
                         { className: 'nav nav-tabs' },
                         _react2.default.createElement(ListItemLink, { to: '/', label: 'Home', activeOnlyWhenExact: 'true' }),
-                        _react2.default.createElement(ListItemLink, { to: '/sub', label: 'Sub', activeOnlyWhenExact: 'true' })
+                        _react2.default.createElement(ListItemLink, { to: '/map', label: 'Map', activeOnlyWhenExact: 'true' })
                     ),
                     _react2.default.createElement(_reactRouterDom.Route, { path: '/', exact: true, component: Home }),
-                    _react2.default.createElement(_reactRouterDom.Route, { path: '/sub', component: Sub })
+                    _react2.default.createElement(_reactRouterDom.Route, { path: '/map', component: MapComponent })
                 )
             );
         }
@@ -263,12 +282,18 @@ module.exports = ReactRouterDOM;
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports) {
+
+module.exports = L;
+
+/***/ }),
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(11);
+var content = __webpack_require__(12);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -276,7 +301,7 @@ var transform;
 var options = {}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(13)(content, options);
+var update = __webpack_require__(14)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -293,10 +318,10 @@ if(false) {
 }
 
 /***/ }),
-/* 11 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(12)(undefined);
+exports = module.exports = __webpack_require__(13)(undefined);
 // imports
 
 
@@ -307,7 +332,7 @@ exports.push([module.i, ".app {\n  margin-top: 63px; }\n  .app .jumbotron {\n   
 
 
 /***/ }),
-/* 12 */
+/* 13 */
 /***/ (function(module, exports) {
 
 /*
@@ -389,7 +414,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 13 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -435,7 +460,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(14);
+var	fixUrls = __webpack_require__(15);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -748,7 +773,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 14 */
+/* 15 */
 /***/ (function(module, exports) {
 
 

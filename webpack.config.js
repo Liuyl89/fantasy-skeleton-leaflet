@@ -10,7 +10,7 @@ module.exports = {
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist'),
-        publicPath: '/fantasy-skeleton-react/'
+        publicPath: '/fantasy-skeleton-leaflet/'
     },
     module: {
         rules: [{
@@ -98,6 +98,10 @@ module.exports = {
                 file: 'js/bootstrap.min.js',
                 path: 'bootstrap/',
                 version: '3.3.7'
+            }, {
+                file: 'leaflet.js',
+                path: 'leaflet/',
+                version: '1.1.0'
             }],
             links: [{
                 rel: 'stylesheet',
@@ -114,6 +118,11 @@ module.exports = {
                 file: 'css/bootstrap.min.css',
                 path: 'bootstrap/',
                 version: '3.3.7'
+            }, {
+                rel: 'stylesheet',
+                file: 'leaflet.css',
+                path: 'leaflet/',
+                version: '1.1.0'
             }]
         }),
         new webpack.ProvidePlugin({
@@ -129,5 +138,6 @@ module.exports = {
         'react-dom': 'ReactDOM',
         'react-router-dom': 'ReactRouterDOM',
         'prop-types':'PropTypes',
+        'leaflet':'L',
     }]
 }
